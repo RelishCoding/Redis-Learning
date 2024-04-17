@@ -32,7 +32,8 @@ public class ShopController {
     public Result queryShopById(@PathVariable("id") Long id) {
         //原来是直接查询数据库
         //return Result.ok(shopService.getById(id));
-        return shopService.queryById(id);
+        //return shopService.queryById(id);
+        return shopService.queryByIdWithCacheUtil(id);
     }
 
     /**
