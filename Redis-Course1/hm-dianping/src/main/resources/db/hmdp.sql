@@ -1,19 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : local
- Source Server Type    : MySQL
- Source Server Version : 50622
- Source Host           : localhost:3306
- Source Schema         : hmdp
-
- Target Server Type    : MySQL
- Target Server Version : 50622
- File Encoding         : 65001
-
- Date: 14/03/2022 21:38:11
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -21,7 +5,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- Table structure for tb_blog
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_blog`;
-CREATE TABLE `tb_blog`  (
+CREATE TABLE `tb_blog` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `shop_id` bigint(20) NOT NULL COMMENT '商户id',
   `user_id` bigint(20) UNSIGNED NOT NULL COMMENT '用户id',
@@ -47,7 +31,7 @@ INSERT INTO `tb_blog` VALUES (7, 10, 1, '杭州周末好去处｜💰50就可以
 -- Table structure for tb_blog_comments
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_blog_comments`;
-CREATE TABLE `tb_blog_comments`  (
+CREATE TABLE `tb_blog_comments` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `user_id` bigint(20) UNSIGNED NOT NULL COMMENT '用户id',
   `blog_id` bigint(20) UNSIGNED NOT NULL COMMENT '探店id',
@@ -69,7 +53,7 @@ CREATE TABLE `tb_blog_comments`  (
 -- Table structure for tb_follow
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_follow`;
-CREATE TABLE `tb_follow`  (
+CREATE TABLE `tb_follow` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `user_id` bigint(20) UNSIGNED NOT NULL COMMENT '用户id',
   `follow_user_id` bigint(20) UNSIGNED NOT NULL COMMENT '关联的用户id',
@@ -85,7 +69,7 @@ CREATE TABLE `tb_follow`  (
 -- Table structure for tb_seckill_voucher
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_seckill_voucher`;
-CREATE TABLE `tb_seckill_voucher`  (
+CREATE TABLE `tb_seckill_voucher` (
   `voucher_id` bigint(20) UNSIGNED NOT NULL COMMENT '关联的优惠券的id',
   `stock` int(8) NOT NULL COMMENT '库存',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -103,7 +87,7 @@ CREATE TABLE `tb_seckill_voucher`  (
 -- Table structure for tb_shop
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_shop`;
-CREATE TABLE `tb_shop`  (
+CREATE TABLE `tb_shop` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '商铺名称',
   `type_id` bigint(20) UNSIGNED NOT NULL COMMENT '商铺类型的id',
@@ -145,7 +129,7 @@ INSERT INTO `tb_shop` VALUES (14, '星聚会KTV(拱墅区万达店)', 2, 'https:
 -- Table structure for tb_shop_type
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_shop_type`;
-CREATE TABLE `tb_shop_type`  (
+CREATE TABLE `tb_shop_type` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '类型名称',
   `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '图标',
@@ -173,7 +157,7 @@ INSERT INTO `tb_shop_type` VALUES (10, '美睫·美甲', '/types/mjmj.png', 4, '
 -- Table structure for tb_sign
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_sign`;
-CREATE TABLE `tb_sign`  (
+CREATE TABLE `tb_sign` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `user_id` bigint(20) UNSIGNED NOT NULL COMMENT '用户id',
   `year` year NOT NULL COMMENT '签到的年',
@@ -191,7 +175,7 @@ CREATE TABLE `tb_sign`  (
 -- Table structure for tb_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user`;
-CREATE TABLE `tb_user`  (
+CREATE TABLE `tb_user` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `phone` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '手机号码',
   `password` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '密码，加密存储',
@@ -1216,7 +1200,7 @@ INSERT INTO `tb_user` VALUES (1009, '13688669888', '', 'user_4qh6bofkol', '', '2
 -- Table structure for tb_user_info
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user_info`;
-CREATE TABLE `tb_user_info`  (
+CREATE TABLE `tb_user_info` (
   `user_id` bigint(20) UNSIGNED NOT NULL COMMENT '主键，用户id',
   `city` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '城市名称',
   `introduce` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '个人介绍，不要超过128个字符',
@@ -1239,7 +1223,7 @@ CREATE TABLE `tb_user_info`  (
 -- Table structure for tb_voucher
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_voucher`;
-CREATE TABLE `tb_voucher`  (
+CREATE TABLE `tb_voucher` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `shop_id` bigint(20) UNSIGNED NULL DEFAULT NULL COMMENT '商铺id',
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '代金券标题',
@@ -1263,7 +1247,7 @@ INSERT INTO `tb_voucher` VALUES (1, 1, '50元代金券', '周一至周日均可�
 -- Table structure for tb_voucher_order
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_voucher_order`;
-CREATE TABLE `tb_voucher_order`  (
+CREATE TABLE `tb_voucher_order` (
   `id` bigint(20) NOT NULL COMMENT '主键',
   `user_id` bigint(20) UNSIGNED NOT NULL COMMENT '下单的用户id',
   `voucher_id` bigint(20) UNSIGNED NOT NULL COMMENT '购买的代金券id',

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  */
 public interface IUserService extends IService<User> {
