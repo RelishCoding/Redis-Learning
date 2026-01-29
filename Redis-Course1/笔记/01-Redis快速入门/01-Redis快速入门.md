@@ -1284,7 +1284,7 @@ public class JedisConnectionFactory {
         jedisPool = new JedisPool(poolConfig, "192.168.150.101", 6379, 1000, "123321");
     }
 
-    public static Jedis getJedis(){
+    public static Jedis getJedis() {
         return jedisPool.getResource();
     }
 }
@@ -1306,7 +1306,7 @@ public class JedisConnectionFactory {
 
 ```java
 @BeforeEach
-void setUp(){
+void setUp() {
     // 建立连接
     // jedis = new Jedis("127.0.0.1",6379);
     jedis = JedisConnectionFacotry.getJedis();
@@ -1494,7 +1494,7 @@ RedisTemplate 可以接收任意 Object 作为值写入 Redis：
 @Configuration
 public class RedisConfig {
     @Bean
-    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory){
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
         // 创建RedisTemplate对象
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         // 设置连接工厂
