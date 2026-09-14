@@ -9,5 +9,5 @@ import com.hmdp.entity.Voucher;
  * </p>
  */
 public interface IVoucherService extends IService<Voucher> {
-
+    void addSeckillVoucher(Voucher voucher);
 }
